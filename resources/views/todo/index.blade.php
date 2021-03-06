@@ -27,7 +27,7 @@
                     </td>
                     <td class="border px-4 py-2">
                         <a href={{ route('todo.edit', $todo->id) }}>Edit</a>
-                        <form action={{ route('todo.destroy'), $todo->$id }} method="POST" class="inline-block">
+                        <form action={{ route('todo.destroy', $todo->id) }} method="POST" class="inline-block">
                         @csrf
                         @method('delete')
                         <button type="submit">
