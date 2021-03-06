@@ -17,7 +17,7 @@ class TodoController extends Controller
         $todos = Todo::all();
         return view('todo.index', [
             'todos' => $todos
-            ]);
+        ]);
     }
 
     /**
@@ -87,6 +87,7 @@ class TodoController extends Controller
      */
     public function destroy(Todo $todo)
     {
-        //
+        $todo->delete();
+        return redirect()->route('todo.index');
     }
 }
